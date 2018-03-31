@@ -5,5 +5,14 @@ const ContactsDao = require('./dao/Contacts');
 // });
 
 (async () => {
-    console.log(await ContactsDao.getList())
+
+    await ContactsDao.addContact({
+        name: "John",
+        lastname: "Doe",
+        tel: "+998971234567",
+        email: "test@mail.ru"
+    });
+
+    console.log(await ContactsDao.getList());
+
 })();
